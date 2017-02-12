@@ -1,4 +1,4 @@
-#version 130
+#version 330
 
 layout(points) in;
 layout(points) out;
@@ -21,13 +21,13 @@ out int typeOut;
 uniform vec3 genPosition;
 uniform vec3 genVelocityMin;
 uniform vec3 genVelocityMax;
+uniform vec3 randomSeed;
 uniform vec4 genColor;
 uniform float genSize;
 uniform float genLifeTimeMin;
 uniform float genLifeTimeMax;
 uniform float timePassed;
 uniform int genNum;
-uniform vec3 randomSeed;
 
 vec3 localSeed;
 vec3 gravity;
@@ -64,7 +64,7 @@ void main() {
         for (int i = 0; i < genNum; i++) {
             positionOut = genPosition;
             velocityOut = genVelocityMin+vec3(genVelocityMax.x * randZeroOne(),
-                            gVelocityMax.y * randZeroOne(),
+                            genVelocityMax.y * randZeroOne(),
                             genVelocityMax.z * randZeroOne());
             colorOut = genColor;
             lifeTimeOut = genLifeTimeMin + genLifeTimeMax * randZeroOne();
