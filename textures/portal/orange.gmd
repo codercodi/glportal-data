@@ -1,0 +1,6 @@
+<mat name="portal/blue" fancyname="Blue Portal">
+	<diffuse path="blue.png"/>
+	<scale u="1" v="1"/>
+	<kind>portal</kind>
+	<tags>portal</tags>
+</mat>
